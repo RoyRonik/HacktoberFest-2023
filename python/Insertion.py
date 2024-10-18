@@ -1,32 +1,20 @@
- def insertionSort(arr):
+import random
 
-    n = len(arr)  # Get the length of the array
-
-      
-
+def insertionSort(ar):
+    n = len(ar) 
     if n <= 1:
-
-        return  # If the array has 0 or 1 element, it is already sorted, so return
+        return 
  
-
-    for i in range(1, n):  # Iterate over the array starting from the second element
-
-        key = arr[i]  # Store the current element as the key to be inserted in the right position
-
+    for i in range(1, n):  
+        key = ar[i] 
         j = i-1
 
-        while j >= 0 and key < arr[j]:  # Move elements greater than key one position ahead
-
-            arr[j+1] = arr[j]  # Shift elements to the right
-
+        while j >= 0 and key < ar[j]:  
+            ar[j+1] = ar[j] 
             j -= 1
+        ar[j+1] = key 
 
-        arr[j+1] = key  # Insert the key in the correct position
-
-  
-# Sorting the array [12, 11, 13, 5, 6] using insertionSort
-
-arr = [12, 11, 13, 5, 6]
-insertionSort(arr)
-
-print(arr)
+ar = [random.randint(1,100) for i in range(11)]
+print("The generated random list is:",ar)
+insertionSort(ar)
+print(ar)
